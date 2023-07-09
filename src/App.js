@@ -13,19 +13,10 @@ function App() {
   return (
     <div>
        <h2> Let's get started! </h2>
-      {/*
-
-      
-        <ExpenseItem title={expense[0].title}  location ={expense[0].locationOfExpenditure} amount = {expense[0].amount} date = {expense[0].date}></ExpenseItem>
-        <ExpenseItem title={expense[1].title}  location ={expense[1].locationOfExpenditure} amount = {expense[1].amount} date = {expense[1].date}></ExpenseItem>       
-        <ExpenseItem title={expense[2].title}  location ={expense[2].locationOfExpenditure} amount = {expense[2].amount} date = {expense[2].date}></ExpenseItem>
-        <ExpenseItem title={expense[3].title}  location ={expense[3].locationOfExpenditure} amount = {expense[3].amount} date = {expense[3].date}></ExpenseItem>
-      */}
-      {expense.map((item)=>{
-         return  <ExpenseItem title={item.title} location = {item.locationOfExpenditure} amount = {item.amount} date = {item.date}
-          />
-        })}
-
+       {expense.map((item)=>{
+        return  <ExpenseItem title={item.title} location = {item.locationOfExpenditure} amount = {item.amount} date = {item.date}
+         />
+       })}
     </div>
   );
 }
