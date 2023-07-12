@@ -1,8 +1,11 @@
 //import logo from './logo.svg';
-//import './App.css';
-import ExpenseItem  from './components/ExpenseItem.js'; 
+import React from 'react';
+import './App.css';
+import ExpenseItem  from './components/expenses/ExpenseItem.js'; 
+import Card from './components/UI/Card.js';
 
-function App() {
+
+const App = () => {
   const expense = [
     {title:'Car Insurance',locationOfExpenditure:'Delhi',amount:294.67,date:new Date(2023,7,7)},
     {title:'Food',locationOfExpenditure:'Noida',amount:500, date:new Date(2022,7,5)},
@@ -11,13 +14,17 @@ function App() {
 
 ];
   return (
-    <div>
+    <Card>
        <h2> Let's get started! </h2>
+       <div class = "expenses">
        {expense.map((item)=>{
-        return  <ExpenseItem title={item.title} location = {item.locationOfExpenditure} amount = {item.amount} date = {item.date}
-         />
-       })}
-    </div>
+         return  <ExpenseItem title={item.title} location = {item.locationOfExpenditure} amount = {item.amount} date = {item.date}
+          />
+        })}
+       </div>
+       
+       
+    </Card>
   );
 }
 
