@@ -1,44 +1,52 @@
 //import logo from './logo.svg';
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Expense from "./components/expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 const App = () => {
   const expenses = [
     {
-      id:"e1",
+      id: "e1",
       title: "Car Insurance",
-      locationOfExpenditure: "Delhi",
+      location: "Delhi",
       amount: 294.67,
       date: new Date(2023, 7, 7),
     },
     {
-      id:"e2",
+      id: "e2",
       title: "Food",
-      locationOfExpenditure: "Noida",
+      location: "Noida",
       amount: 500,
       date: new Date(2022, 7, 5),
     },
     {
-      id:"e3",
+      id: "e3",
       title: "Petrol",
-      locationOfExpenditure: "Delhi",
+      location: "Delhi",
       amount: 1000,
       date: new Date(2021, 7, 4),
     },
     {
-      id:"e4",
+      id: "e4",
       title: "Movie",
-      locationOfExpenditure: "Noida",
+      location: "Noida",
       amount: 600,
       date: new Date(2022, 7, 6),
     },
   ];
+  const [myExpense, setMyExepnse] = useState(expenses);
+  const addExpenseHandler = (expense) => {
+   setMyExepnse((prevData)=>{
+    return [ ...prevData,expense]
+   }
+     
+)
+  };
+
   return (
     <div>
-      <NewExpense />
-      <Expense items={expenses} /> 
-      
+      <NewExpense onAddExpense={addExpenseHandler} />
+      <Expense items={myExpense} />
     </div>
   );
 };
