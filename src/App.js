@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Expense from "./components/expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
-const App = () => {
+
   const expenses = [
     {
       id: "e1",
@@ -34,13 +34,13 @@ const App = () => {
       date: new Date(2022, 7, 6),
     },
   ];
+  
+  const App = () => {
   const [myExpense, setMyExepnse] = useState(expenses);
   const addExpenseHandler = (expense) => {
    setMyExepnse((prevData)=>{
-    return [ ...prevData,expense]
-   }
-     
-)
+    return [ expense, ...prevData]
+   })
   };
 
   return (

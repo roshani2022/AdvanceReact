@@ -10,7 +10,7 @@ const ExpenseItem = (props) => {
   const [amount, changeAmount] = useState(props.amount);
   //console.log('ExpenseItem evaluated by React')
   const clickHandler = () => {
-    changeAmount("100");
+    changeAmount(100);
    // console.log(amount);
     
   };
