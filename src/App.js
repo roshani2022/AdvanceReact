@@ -10,7 +10,7 @@ import NewExpense from "./components/NewExpense/NewExpense";
       title: "Car Insurance",
       location: "Delhi",
       amount: 294.67,
-      date: new Date(2023, 7, 7),
+      date: new Date(2020, 7, 7),
     },
     {
       id: "e2",
